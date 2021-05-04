@@ -81,7 +81,6 @@
                     </table>
                 </div>
             </div>
-        </div>
         <!-- Fin del Contenido-->
 
         <!-- Inicio Modal's -->
@@ -165,7 +164,7 @@
                 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success rounded-pill">Guardar</button>  
+                    <button type="submit" class="btn btn-success rounded-pill">Guardar</button>
                 </form>
                     <button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Salir</button>
               </div>
@@ -316,17 +315,16 @@
                 
                     <!-- Modal Header -->
                     <div class="modal-header">
-                    <h4 class="modal-title">Modal Heading</h4>
+                    <h4 class="modal-title">Detalles</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     
                     <!-- Modal body -->
                     <div class="modal-body">
                         <div class="container">
-                            <form id="register-form-cliente">
                             <div class="row mb-2">
                                 <div class="col">
-                                    <h5>Cliente <span class=""></span></h5>
+                                    <h5>Cliente <span id="clienteView" class="badge badge-secondary"></span></h5>
                                 </div>
                             </div>
                             <div class="row mb-2">
@@ -338,52 +336,44 @@
                             <div class="row mb-2">
                                 <div class="col-6">
                                     <label for="telefono" class="form-label">Telefono</label>
-                                    <input type="text" class="form-control" id="telefonoRegister" readonly>
+                                    <input type="text" class="form-control" id="telefonoView" readonly>
                                 </div>
                                 <div class="col-6">
                                     <label for="celular" class="form-label">Celular</label>
-                                    <input type="text" class="form-control" id="celularRegister" readonly>
+                                    <input type="text" class="form-control" id="celularView" readonly>
                                 </div>
                             </div>
                             <div class="row mb-2">
                                 <div class="col">
                                     <label for="direccion" class="form-label">Dirección</label>
-                                    <input type="text" class="form-control" id="direccionRegister" readonly>
+                                    <input type="text" class="form-control" id="direccionView" readonly>
                                 </div>
                             </div>
                             <div class="row mb-2">
                                 <div class="col">
                                     <label for="posicion" class="form-label">Posición</label>
-                                    <input type="text" class="form-control" id="posicionRegister" readonly>
+                                    <input type="text" class="form-control" id="posicionView" readonly>
                                 </div>
                                 <div class="col">
                                     <label for="provincia" class="form-label">Distrito</label>
-                                    <input type="text" class="form-control" id="provinciaRegister" readonly>
+                                    <input type="text" class="form-control" id="distritoView" readonly>
                                 </div>
                                 <div class="col">
                                     <label for="provincia" class="form-label">Provincia</label>
-                                    <input type="text" class="form-control" id="provinciaRegister" readonly>
+                                    <input type="text" class="form-control" id="provinciaView" readonly>
                                 </div>
                             </div>
                             <hr>
                             <div class="row mb-2">
                                 <div class="col">
-                                    <h5>Empresa</h5>
-                                </div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="RazonSocial">Razón Social</label>
-                                        <input type="text" class="form-control" id="razonSocialRegister" readonly>
-                                    </div>
+                                    <h5>Empresa <span id="razonSocialView" class="badge badge-secondary"></span></h5>
                                 </div>
                             </div>
                             <div class="row mb-2">
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="RazonSocial">RUC</label>
-                                        <input type="text" class="form-control" id="rucRegister" readonly>
+                                        <input type="text" class="form-control" id="rucView" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -391,13 +381,13 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="RazonSocial">Rubro</label>
-                                        <input type="text" class="form-control" id="rubroRegister" readonly>
+                                        <input type="text" class="form-control" id="rubroView" readonly>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="RazonSocial">Sitio Web</label>
-                                        <input type="text" class="form-control" id="websiteRegister" readonly>
+                                        <input type="text" class="form-control" id="websiteView" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -405,7 +395,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="RazonSocial">Dirección</label>
-                                        <input type="text" class="form-control" id="direccionRegisterEmpresa" readonly>
+                                        <input type="text" class="form-control" id="direccionEmpresaView" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -413,13 +403,13 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="RazonSocial">Referencia</label>
-                                        <input type="text" class="form-control" id="referenciaRegister" readonly>
+                                        <input type="text" class="form-control" id="referenciaView" readonly>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="RazonSocial">Aniversario</label>
-                                        <input type="date" class="form-control" id="dateRegister" readonly>
+                                        <input type="date" class="form-control" id="dateView" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -430,16 +420,94 @@
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
+                </div>
+                </div>
+            </div>
+            <!-- Fin Modal Editar Datos-->
+            <!-- Modal Editar Datos -->
+            <div class="modal fade" id="myModalEditar">
+                <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                    <h4 class="modal-title">Editar Datos</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="container">
+                            <form id="edit-form">
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <label for="email" class="form-label">Cliente</label>
+                                    <input type="text" class="form-control" id="clienteEdit">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="emailEdit">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="telefono" class="form-label">Telefono</label>
+                                    <input type="text" class="form-control" id="telefonoEdit">
+                                </div>
+                                <div class="col-6">
+                                    <label for="celular" class="form-label">Celular</label>
+                                    <input type="text" class="form-control" id="celularEdit">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <label for="direccion" class="form-label">Dirección</label>
+                                    <input type="text" class="form-control" id="direccionEdit">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <label for="posicion" class="form-label">Posición</label>
+                                    <input type="text" class="form-control" id="posicionEdit">
+                                </div>
+                                <div class="col">
+                                    <label for="provincia" class="form-label">Distrito</label>
+                                    <input type="text" class="form-control" id="distritoEdit">
+                                </div>
+                                <div class="col">
+                                    <label for="provincia" class="form-label">Provincia</label>
+                                    <input type="text" class="form-control" id="provinciaEdit">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <label for="RazonSocial">Empresa</label>
+                                    <input type="text" class="form-control" id="razonSocialEdit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success rounded-pill">Guardar</button>
+                </form>
+                        <button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Salir</button>
+                    </div>
                     
                 </div>
                 </div>
             </div>
-            <!-- Fin Modal Ver Datos-->
+            <!-- Fin Modal Editar Datos-->
         <!-- Fin Modal's-->
 
         <!-- Alert (Toast) -->
 
         <!-- Fin Alert (Toast)-->
+        
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

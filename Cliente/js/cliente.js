@@ -30,6 +30,74 @@ $(document).on('click','.btnEliminar', function(){
     }
 });
 
+$(document).on('click','.btnVer', function(){
+    let element = $(this)[0].parentElement.parentElement;
+    let id = $(element).attr('taskId');
+    $.post('../Cliente/php/task-view-cliente.php', {id}, function(response){
+        const task = JSON.parse(response);
+        $('#clienteView').html(task.name);
+        $('#emailView').val(task.email);
+        $('#telefonoView').val(task.phone);
+        $('#celularView').val(task.movil);
+        $('#direccionView').val(task.address);
+        $('#posicionView').val(task.position);
+        $('#distritoView').val(task.district);
+        $('#provinciaView').val(task.province);
+    });
+    $.post('../Cliente/php/task-view-empresa.php', {id}, function(e){
+        const task_business = JSON.parse(e);
+        $('#razonSocialView').html(task_business.nameEmpresa);
+        $('#rucView').val(task_business.ruc);
+        $('#rubroView').val(task_business.rubro);
+        $('#websiteView').val(task_business.page_web);
+        $('#direccionEmpresaView').val(task_business.direccionEmpresa);
+        $('#referenciaView').val(task_business.direccionEmpresaReference);
+        $('#dateView').val(task_business.aniversario);
+    });
+});
+
+$(document).on('click','.btnEditar',function(){
+    let element = $(this)[0].parentElement.parentElement;
+    let id = $(element).attr('taskId');
+    $.post('../Cliente/php/task-view-cliente.php', {id}, function(response){
+        const task = JSON.parse(response);
+        $('#clienteEdit').val(task.name);
+        $('#emailEdit').val(task.email);
+        $('#telefonoEdit').val(task.phone);
+        $('#celularEdit').val(task.movil);
+        $('#direccionEdit').val(task.address);
+        $('#posicionEdit').val(task.position);
+        $('#distritoEdit').val(task.district);
+        $('#provinciaEdit').val(task.province);
+    });
+    $.post('../Cliente/php/task-view-empresa.php', {id}, function(e){
+        const task_business = JSON.parse(e);
+        $('#razonSocialEdit').val(task_business.nameEmpresa);
+        $('#rucEdit').val(task_business.ruc);
+        $('#rubroEdit').val(task_business.rubro);
+        $('#websiteEdit').val(task_business.page_web);
+        $('#direccionEmpresaEdit').val(task_business.direccionEmpresa);
+        $('#referenciaEdit').val(task_business.direccionEmpresaReference);
+        $('#dateEdit').val(task_business.aniversario);
+    });
+});
+
+$('#edit-form').submit(function(e){
+    const postData = {
+        name: $('#clienteEdit').val(),
+        email: $('#emailEdit').val(),
+        telefono: $('#telefonoEdit').val(),
+        celular: $('#celularEdit').val(),
+        direccion: $('#direccionEdit').val(),
+        posicion: $('#posicionEdit').val(),
+        distrito: $('#distritoEdit').val(),
+        provincia: $('#provinciaEdit').val()
+    };
+    $.post('../Cliente/php/task-edit-cliente.php', postData, function(response){
+        console.log(response);
+    });
+});
+
 function fetchCliente(){
     $.ajax({
         url: '../Cliente/php/task-list-cliente.php',

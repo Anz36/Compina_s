@@ -15,6 +15,6 @@
         header("Location: ../Cliente");
     }
     else{
-        header("Location: index.html?mensaje=Datos incorrectossss");
+        header("Location: ../Login/?mensaje=Datos incorrectossss");
     } 
 ?>
