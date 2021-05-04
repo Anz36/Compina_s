@@ -1,0 +1,117 @@
+body {
+    background: white;
+    -background-image: linear-gradient(135.9deg, rgba(109, 25, 252,1) 16.4%, rgb(25, 21, 32) 56.1%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.vertical-nav {
+    min-width: 17rem;
+    width: 17rem;
+    height:100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+}
+.page-content {
+    width: calc(100% - 17rem);
+    margin-left: 17rem;
+    transition: all 0.4s
+}
+#sidebar.active{
+    margin-left: -17rem;
+}
+#content.active{
+    width: 100%;
+    margin: 0;
+}
+.separator{
+    margin: 3rem 0;
+    border-bottom: 1px dashed black;
+}
+.text-uppercase{
+    letter-spacing: 0.1em;
+}
+.text-gray{
+    color: #aaa;
+}
+.nav-link{
+    text-transform: capitalize;
+}
+.nav-link:hover{
+    background: #f3f2f2;
+}
+@media (max-width: 768px){
+    #sidebar{
+        margin-left: -17rem;
+    }
+    #sidebar.active{
+        margin-left: 0;
+    }
+    #content{
+        width: 100%;
+        margin: 0;
+    }
+    #content.active{
+        margin-left: 17rem;
+        width: calc(100% - 17rem);
+    }
+}
+
+#mitoast {
+    visibility: hidden;
+    position: fixed;
+    z-index: 1;
+    right: 2.5%;
+    top: 50%;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: .25rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.1);
+    max-width: 310px;
+    width: 310px;
+    background-color: #ffffff;
+    opacity: 1;
+  }
+   
+  #mitoast.mostrar {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 4.6s;
+    animation: fadein 0.5s, fadeout 0.5s 4.6s;
+  }
+   
+  @-webkit-keyframes fadein {
+    from {right: 0; opacity: 0;} 
+    to {right: 2.5%; opacity: 1;}
+  }
+   
+  @keyframes fadein {
+    from {right: 0; opacity: 0;}
+    to {right: 2.5%; opacity: 1;}
+  }
+   
+  @-webkit-keyframes fadeout {
+    from {right: 2.5%; opacity: 1;} 
+    to {right: 0; opacity: 0;}
+  }
+   
+  @keyframes fadeout {
+    from {right: 2.5%; opacity: 1;}
+    to {right: 0; opacity: 0;}
+  }
+   
+  #mitoast.cerrar {
+    /* visibility: visible; */
+    -webkit-animation: fadeout 0.5s 4.8s;
+    animation: fadeout 0.5s 4.8s;
+  }
+   
+  @-webkit-keyframes fadeout {
+    from {right: 2.5%; opacity: 1;} 
+    to {right: 0; opacity: 0;}
+  }
+   
+  @keyframes fadeout {
+    from {right: 2.5%; opacity: 1;}
+    to {right: 0; opacity: 0;}
+  }
