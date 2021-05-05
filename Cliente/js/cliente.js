@@ -2,8 +2,42 @@
 
     fetchCliente();
     fetchEmpresa();
+    fetchUser();
+
+$('#searchCliente').keyup(function(){
+    if(($('#searchCliente').val()) !== ""){
+        let search = $('#searchCliente').val();
+        $.ajax({
+            url: '../Cliente/php/task-search.php',
+            type: 'POST',
+            data: {search},
+            success: function(response){
+                let task = JSON.parse(response);
+                console.log('task');
+                let template = '';
+                task.forEach(tasks =>{
+                    template +=`
+                        <tr taskId="${tasks.id}">
+                            <td><a  class = "btn btn-warning btnVer rounded-pill" data-toggle="modal" data-target="#myModalVer"> Ver  </a> </td>
+                            <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
+                            <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
+                            <td>${tasks.id}</td>
+                            <td>${tasks.cliente}</td>
+                            <td>${tasks.business}</td>
+                        </tr>
+                    `
+                });
+                $('#cotenidoCliente').html(template);
+            }
+        })
+    } else {
+        fetchCliente();
+    }
+});
+
 
 $('#register-form-cliente').submit(function(e) {
+    
     const postData = {
         name: $('#nameRegister').val(),
         email: $('#emailRegister').val(),
@@ -20,6 +54,16 @@ $('#register-form-cliente').submit(function(e) {
         $('#register-form-cliente').trigger('reset');
     });
     e.preventDefault();
+});
+
+$(document).on('click','.btnCerrarSession', function(){
+    $.ajax({
+        url: '../Cliente/php/task-logout.php',
+        type: 'GET',
+        success: function(response){
+            window.location.href = '../login/';
+        }
+    });
 });
 
 $(document).on('click','.btnEliminar', function(){
@@ -140,6 +184,18 @@ function fetchEmpresa(){
                 `
             });
             $('#datoEmpresaRegister').html(template);
+        }
+    });
+}
+
+function fetchUser(){
+    $.ajax({
+        url: '../Cliente/php/task-search-user.php',
+        type: 'GET',
+        success: function(response){
+            const task = JSON.parse(response);
+            $('#userName').html(task.name);
+            $('#userType').html(task.type);
         }
     });
 }

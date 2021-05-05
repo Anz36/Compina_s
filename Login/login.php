@@ -9,12 +9,13 @@
 
     while($datos = mysqli_fetch_array($result)){
         $_SESSION['usuario'] = $datos['people'];
+        $_SESSION['type'] = $datos['type_user'];
     }
-
+    
     if($_SESSION['usuario']!= "-1"){
         header("Location: ../Cliente");
     }
     else{
-        header("Location: ../Login/?mensaje=Datos incorrectossss");
+        header("Location: ../Login/?mensaje=Datos incorrectos");
     } 
 ?>

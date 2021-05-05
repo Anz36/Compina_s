@@ -15,7 +15,6 @@ $('#register-form-empresa').submit(function(e){
         fetchCliente();
         $('#register-form-empresa').trigger('reset');
     });
-    e.preventDefault();
 });
 
 function fetchCliente(){

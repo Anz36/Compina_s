@@ -16,10 +16,12 @@
             <div class="media d-flex align-items-center">
                 <img src="" alt="..." width="80" height="80" class="mr-3 rounded-circle img-thumbnail shadow-sm">
                 <div class="media-body">
-                    <h4 class="m-0">Usuario</h4>
-                    <p class="font-weight-normal text-mutd mb-0">Web Developer</p>
+                    <h4 class="m-0" id="userName"></h4>
+                    <p class="font-weight-normal text-mutd mb-0" id="userType"></p>
                 </div>
             </div>
+            <hr>
+            <a class="btnCerrarSession" >Cerrar Session</a>
         </div>
         <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Dashboard</p>
 
@@ -64,6 +66,15 @@
                 </div>
             </div>
             <hr>
+            <div class="row text-dar">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="">Busqueda</label>
+                        <input type="text" class="form-control" id="searchCliente" aria-describedby="helpId" placeholder="Busqueda por ...">
+                        <small id="helpId" class="form-text text-muted">Busqueda por Cliente, Empresa, Telefono, Email, Distrito, Puesto Administrativo.</small>
+                      </div>
+                </div>
+            </div>
         <!-- <div class="separator"></div> -->
             <div class="row text-dark">
                 <div class="col-auto table-responsive">
@@ -487,6 +498,7 @@
                                 <div class="col">
                                     <label for="RazonSocial">Empresa</label>
                                     <input type="text" class="form-control" id="razonSocialEdit">
+                                    <input type="hidden" id="empresaIdEdit">
                                 </div>
                             </div>
                         </div>
