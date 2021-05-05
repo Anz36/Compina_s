@@ -1,6 +1,7 @@
 <?php
     include '../../Conexion/conexion.php';
     if (isset($_POST['name'])){
+        $id = $_POST['id'];
         $name = $_POST['name'];
         $email = $_POST['email'];
         $telefono = $_POST['telefono'];

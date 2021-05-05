@@ -13,7 +13,8 @@
             'province' => $row['province'],
             'email' => $row['email'],
             'phone' => $row['phone'],
-            'movil' => $row['movil']
+            'movil' => $row['movil'],
+            'id' => $row['id']
         );
     }
     $jsonstring = json_encode($json[0]);

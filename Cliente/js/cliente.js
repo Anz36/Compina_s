@@ -1,6 +1,7 @@
 
 
     fetchCliente();
+    fetchEmpresa();
 
 $('#register-form-cliente').submit(function(e) {
     const postData = {
@@ -11,7 +12,8 @@ $('#register-form-cliente').submit(function(e) {
         direccion: $('#direccionRegister').val(),
         posicion: $('#posicionRegister').val(),
         distrito: $('#distritoRegister').val(),
-        provincia: $('#provinciaRegister').val()
+        provincia: $('#provinciaRegister').val(),
+        empresa: $('#datoEmpresaRegister').val()
     };
     $.post('../Cliente/php/task-add-cliente.php', postData, function(response){
         fetchCliente();
@@ -25,7 +27,7 @@ $(document).on('click','.btnEliminar', function(){
         let element = $(this)[0].parentElement.parentElement;
         let id = $(element).attr('taskId');
         $.post('../Cliente/php/task-delete-cliente.php',{id}, function(response){
-            fetchCliente()
+            fetchCliente();
         })
     }
 });
@@ -69,6 +71,7 @@ $(document).on('click','.btnEditar',function(){
         $('#posicionEdit').val(task.position);
         $('#distritoEdit').val(task.district);
         $('#provinciaEdit').val(task.province);
+        $('#idClienteEdit').val(task.id);
     });
     $.post('../Cliente/php/task-view-empresa.php', {id}, function(e){
         const task_business = JSON.parse(e);
@@ -91,11 +94,13 @@ $('#edit-form').submit(function(e){
         direccion: $('#direccionEdit').val(),
         posicion: $('#posicionEdit').val(),
         distrito: $('#distritoEdit').val(),
-        provincia: $('#provinciaEdit').val()
+        provincia: $('#provinciaEdit').val(),
+        id: $('#idClienteEdit').val()
     };
     $.post('../Cliente/php/task-edit-cliente.php', postData, function(response){
-        console.log(response);
+        fetchCliente();
     });
+    e.preventDefault();
 });
 
 function fetchCliente(){
@@ -118,6 +123,23 @@ function fetchCliente(){
                 `
             });
             $('#cotenidoCliente').html(template);
+        }
+    });
+}
+
+function fetchEmpresa(){
+    $.ajax({
+        url: '../Cliente/php/task-list-empresa.php',
+        type: 'GET',
+        success: function(response){
+            let task = JSON.parse(response);
+            let template = '';
+            task.forEach(tasks =>{
+                template +=`
+                    <option value="${tasks.id}">${tasks.empresa}</option>
+                `
+            });
+            $('#datoEmpresaRegister').html(template);
         }
     });
 }
