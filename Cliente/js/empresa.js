@@ -19,7 +19,7 @@ $('#register-form-empresa').submit(function(e){
 
 function fetchCliente(){
     $.ajax({
-        url: '../Cliente/php/task-list-cliente.php',
+        url: '../Cliente/php/task-list-all.php',
         type: 'GET',
         success: function(response){
             let task = JSON.parse(response);

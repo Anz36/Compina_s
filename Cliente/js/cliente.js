@@ -1,5 +1,5 @@
 
-
+    fetchList();
     fetchCliente();
     fetchEmpresa();
     fetchUser();
@@ -31,9 +31,10 @@ $('#searchCliente').keyup(function(){
             }
         })
     } else {
-        fetchCliente();
+        fetchList();
     }
 });
+
 
 
 $('#register-form-cliente').submit(function(e) {
@@ -50,7 +51,7 @@ $('#register-form-cliente').submit(function(e) {
         empresa: $('#datoEmpresaRegister').val()
     };
     $.post('../Cliente/php/task-add-cliente.php', postData, function(response){
-        fetchCliente();
+        fetchList();
         $('#register-form-cliente').trigger('reset');
     });
     e.preventDefault();
@@ -61,7 +62,7 @@ $(document).on('click','.btnCerrarSession', function(){
         url: '../Cliente/php/task-logout.php',
         type: 'GET',
         success: function(response){
-            window.location.href = '../login/';
+            window.location.href = '../Login/';
         }
     });
 });
@@ -142,34 +143,68 @@ $('#edit-form').submit(function(e){
         id: $('#idClienteEdit').val()
     };
     $.post('../Cliente/php/task-edit-cliente.php', postData, function(response){
-        fetchCliente();
+        fetchList();
     });
     e.preventDefault();
 });
 
 function fetchCliente(){
+    
+    $('#mostrarDatos').change(function(){
+        
+        if ($('#mostrarDatos').val() !== ''){
+            let limit = $('#mostrarDatos').val();
+            $.ajax({
+                url: '../Cliente/php/task-list-cliente.php',
+                type: 'POST',
+                data: {limit},
+                success: function(response){
+                    let task = JSON.parse(response);
+                    let template = '';
+                    task.forEach(tasks =>{
+                        template +=`
+                            <tr taskId="${tasks.id}">
+                                <td><a  class = "btn btn-warning btnVer rounded-pill" data-toggle="modal" data-target="#myModalVer"> Ver  </a> </td>
+                                <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
+                                <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
+                                <td>${tasks.id}</td>
+                                <td>${tasks.cliente}</td>
+                                <td>${tasks.empresa}</td>
+                            </tr>
+                        `
+                    });
+                    $('#cotenidoCliente').html(template);
+                }
+            });
+        }
+    });
+    
+}
+
+function fetchList(){
     $.ajax({
-        url: '../Cliente/php/task-list-cliente.php',
+        url: '../Cliente/php/task-list-all.php',
         type: 'GET',
         success: function(response){
             let task = JSON.parse(response);
             let template = '';
             task.forEach(tasks =>{
-                template +=`
-                    <tr taskId="${tasks.id}">
-                        <td><a  class = "btn btn-warning btnVer rounded-pill" data-toggle="modal" data-target="#myModalVer"> Ver  </a> </td>
-                        <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
-                        <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
-                        <td>${tasks.id}</td>
-                        <td>${tasks.cliente}</td>
-                        <td>${tasks.empresa}</td>
-                    </tr>
-                `
-            });
-            $('#cotenidoCliente').html(template);
-        }
+                    template +=`
+                        <tr taskId="${tasks.id}">
+                            <td><a  class = "btn btn-warning btnVer rounded-pill" data-toggle="modal" data-target="#myModalVer"> Ver  </a> </td>
+                            <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
+                            <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
+                            <td>${tasks.id}</td>
+                            <td>${tasks.cliente}</td>
+                            <td>${tasks.empresa}</td>
+                        </tr>
+                    `
+                });
+                $('#cotenidoCliente').html(template);
+            }
     });
 }
+
 
 function fetchEmpresa(){
     $.ajax({
