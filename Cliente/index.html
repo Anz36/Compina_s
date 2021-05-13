@@ -101,7 +101,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col" colspan="3" class="text-center">Acciones</th>
+                                <th scope="col" colspan="4" class="text-center">Acciones</th>
                                 <th scope="col">ID</th>
                                 <th scope="col">Cliente</th>
                                 <th scope="col">Empresa</th>
@@ -115,6 +115,102 @@
         <!-- Fin del Contenido-->
 
         <!-- Inicio Modal's -->
+        <!-- Modal Atender-->
+        <div class="modal fade" id="myModalAtender">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+              <div class="modal-content">
+              
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Atender</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row mb-2">
+                            <div class="col">
+                                <h6>Personal</h6>
+                                <p class="lead" id="userNameTwo"></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <h6>Cliente</h6>
+                                <p class="lead" id="clienteName"></p>
+                            </div>
+                            <div class="col">
+                                <h6>Empresa</h6>
+                                <p class="lead" id="empresaName"></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <form id="form-atencion">
+                        <input type="hidden" id="idAtender">
+                        <div class="row mb-2">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="selectType">Tipo de Cliente</label>
+                                    <select class="custom-select" id="selectType">
+                                        <option selected value="null">Seleccione ...</option>
+                                        <option value="Potencial">Potencial</option>
+                                        <option value="Frecuente">Frecuente</option>
+                                        <option value="Ocasional">Ocasional</option>
+                                        <option value="Tercerizadores">Tercerizadores</option>
+                                        <option value="Prospecto">Prospecto</option>
+                                        <option value="No Potencial">No potencial</option>
+                                        <option value="Mal Cliente">Mal Cliente</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="selectOrigin">Origen</label>
+                                    <select class="custom-select" id="selectOrigin">
+                                        <option selected value="null">Seleccione ...</option>
+                                        <option value="Mailing">Mailing</option>
+                                        <option value="Pagina Web">Pagina Web</option>
+                                        <option value="Facebook">Facebook</option>
+                                        <option value="Chat">Chat</option>
+                                        <option value="Llamadas">Llamadas</option>
+                                        <option value="Referidos">Referidos</option>
+                                        <option value="Otros">Otros</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="selectStatus">Estatus Atención </label>
+                                    <select class="custom-select" id="selectStatus">
+                                        <option selected value="null">Seleccione ...</option>
+                                        <option value="Contacto Inicial">Contacto Inicial</option>
+                                        <option value="Retomar Contacto">Retomar Contacto</option>
+                                        <option value="Pendiente por Cotizar">Pendiente por Cotizar</option>
+                                        <option value="Cotizado">Cotizado</option>
+                                        <option value="Venta Realizada">Venta Realizada</option>
+                                        <option value="Venta No Realizada">Venta No Realizada</option>
+                                        <option value="Prod. Entrgado">Prod. Entrgado</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success rounded-pill">Atender</button>
+                </form>
+                    <button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Salir</button>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- Fin Modal Atender -->
         <!-- Modal Register Empresa-->
         <div class="modal fade" id="myModalRegisterEmpresa">
             <div class="modal-dialog modal-lg modal-dialog-scrollable">
@@ -454,7 +550,7 @@
                 </div>
                 </div>
             </div>
-            <!-- Fin Modal Editar Datos-->
+            <!-- Fin Modal Ver Datos-->
             <!-- Modal Editar Datos -->
             <div class="modal fade" id="myModalEditar">
                 <div class="modal-dialog modal-xl">

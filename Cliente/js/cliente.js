@@ -148,6 +148,31 @@ $('#edit-form').submit(function(e){
     e.preventDefault();
 });
 
+$(document).on('click','.btnAtender',function(){
+    let element = $(this)[0].parentElement.parentElement;
+    let id = $(element).attr('taskId');
+    $.post('../Cliente/php/task-view-atencion.php', {id}, function(response){
+        const task = JSON.parse(response);
+        $('#clienteName').html(task.nombre);
+        $('#empresaName').html(task.empresas);
+        $('#idAtender').val(task.id);
+    });
+});
+
+$('#form-atencion').submit(function(e){
+    const postData = {
+        id: $('#idAtender').val(),
+        type: $('#selectType').val(),
+        origin: $('#selectOrigin').val(),
+        status: $('#selectStatus').val()
+    };
+    $.post('../Cliente/php/task-add-atention.php', postData, function(response){
+        if(response === 'Add'){
+            window.location.href = "../Atencion/";
+        }
+    });
+});
+
 function fetchCliente(){
     
     $('#mostrarDatos').change(function(){
@@ -164,6 +189,7 @@ function fetchCliente(){
                     task.forEach(tasks =>{
                         template +=`
                             <tr taskId="${tasks.id}">
+                                <td><a  class = "btn btn-primary btnAtender rounded-pill" data-toggle="modal" data-target="#myModalAtender"> Atender  </a> </td>
                                 <td><a  class = "btn btn-warning btnVer rounded-pill" data-toggle="modal" data-target="#myModalVer"> Ver  </a> </td>
                                 <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
                                 <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
@@ -191,6 +217,7 @@ function fetchList(){
             task.forEach(tasks =>{
                     template +=`
                         <tr taskId="${tasks.id}">
+                            <td><a  class = "btn btn-primary btnAtender rounded-pill" data-toggle="modal" data-target="#myModalAtender"> Atender  </a> </td>
                             <td><a  class = "btn btn-warning btnVer rounded-pill" data-toggle="modal" data-target="#myModalVer"> Ver  </a> </td>
                             <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
                             <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
@@ -230,6 +257,7 @@ function fetchUser(){
         success: function(response){
             const task = JSON.parse(response);
             $('#userName').html(task.name);
+            $('#userNameTwo').html(task.name);
             $('#userType').html(task.type);
         }
     });

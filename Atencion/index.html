@@ -83,6 +83,125 @@
         </div>
     </div>
     <!-- Fin del Contenido-->
+
+    <!-- Modal's -->
+    <!-- Modal Ver Datos -->
+    <div class="modal fade" id="myModalVer">
+        <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+        
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Detalles</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row mb-2">
+                        <div class="col">
+                            <h5>Cliente <span id="clienteView" class="badge badge-secondary"></span></h5>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="emailView" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <label for="telefono" class="form-label">Telefono</label>
+                            <input type="text" class="form-control" id="telefonoView" readonly>
+                        </div>
+                        <div class="col-6">
+                            <label for="celular" class="form-label">Celular</label>
+                            <input type="text" class="form-control" id="celularView" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="direccionView" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <label for="posicion" class="form-label">Posición</label>
+                            <input type="text" class="form-control" id="posicionView" readonly>
+                        </div>
+                        <div class="col">
+                            <label for="provincia" class="form-label">Distrito</label>
+                            <input type="text" class="form-control" id="distritoView" readonly>
+                        </div>
+                        <div class="col">
+                            <label for="provincia" class="form-label">Provincia</label>
+                            <input type="text" class="form-control" id="provinciaView" readonly>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <h5>Empresa <span id="razonSocialView" class="badge badge-secondary"></span></h5>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="RazonSocial">RUC</label>
+                                <input type="text" class="form-control" id="rucView" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="RazonSocial">Rubro</label>
+                                <input type="text" class="form-control" id="rubroView" readonly>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="RazonSocial">Sitio Web</label>
+                                <input type="text" class="form-control" id="websiteView" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="RazonSocial">Dirección</label>
+                                <input type="text" class="form-control" id="direccionEmpresaView" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="RazonSocial">Referencia</label>
+                                <input type="text" class="form-control" id="referenciaView" readonly>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="RazonSocial">Aniversario</label>
+                                <input type="date" class="form-control" id="dateView" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Fin Modal Ver Datos-->
+    <!-- Fin Modal -->
 </body>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
