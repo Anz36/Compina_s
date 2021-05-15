@@ -2,7 +2,7 @@
     fetchList();
     fetchCliente();
     fetchEmpresa();
-    fetchUser();
+    fetchUser();    
 
 $('#searchCliente').keyup(function(){
     if(($('#searchCliente').val()) !== ""){
@@ -120,13 +120,7 @@ $(document).on('click','.btnEditar',function(){
     });
     $.post('../Cliente/php/task-view-empresa.php', {id}, function(e){
         const task_business = JSON.parse(e);
-        $('#razonSocialEdit').val(task_business.nameEmpresa);
-        $('#rucEdit').val(task_business.ruc);
-        $('#rubroEdit').val(task_business.rubro);
-        $('#websiteEdit').val(task_business.page_web);
-        $('#direccionEmpresaEdit').val(task_business.direccionEmpresa);
-        $('#referenciaEdit').val(task_business.direccionEmpresaReference);
-        $('#dateEdit').val(task_business.aniversario);
+        $('#datoEmpresaAll').val(task_business.id);
     });
 });
 
@@ -140,6 +134,7 @@ $('#edit-form').submit(function(e){
         posicion: $('#posicionEdit').val(),
         distrito: $('#distritoEdit').val(),
         provincia: $('#provinciaEdit').val(),
+        empresa: $('#datoEmpresaAll').val(),
         id: $('#idClienteEdit').val()
     };
     $.post('../Cliente/php/task-edit-cliente.php', postData, function(response){
@@ -168,7 +163,7 @@ $('#form-atencion').submit(function(e){
     };
     $.post('../Cliente/php/task-add-atention.php', postData, function(response){
         if(response === 'Add'){
-            window.location.href = "../Atencion/";
+            window.location.href = "../../Atencion/";
         }
     });
 });
@@ -246,6 +241,7 @@ function fetchEmpresa(){
                 `
             });
             $('#datoEmpresaRegister').html(template);
+            $('#datoEmpresaAll').html(template);
         }
     });
 }

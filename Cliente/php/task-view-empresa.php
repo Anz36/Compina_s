@@ -22,7 +22,8 @@
                 'direccionEmpresa' => $row['address'],
                 'direccionEmpresaReference' => $row['address_reference'],
                 'aniversario' => $row['anniversary'],
-                'page_web' => $row['page_web']
+                'page_web' => $row['page_web'],
+                'id' => $row['id']
             );
         }
         $jsonstring = json_encode($json[0]);
@@ -39,7 +40,8 @@
                 'direccionEmpresa' => $row['address'],
                 'direccionEmpresaReference' => $row['address_reference'],
                 'aniversario' => $row['anniversary'],
-                'page_web' => $row['page_web']
+                'page_web' => $row['page_web'],
+                'id' => $row['id']
             );
         }
         $jsonstring = json_encode($json[0]);

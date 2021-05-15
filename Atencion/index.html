@@ -86,8 +86,8 @@
 
     <!-- Modal's -->
     <!-- Modal Ver Datos -->
-    <div class="modal fade" id="myModalVer">
-        <div class="modal-dialog modal-xl">
+    <div class="modal fade" id="myModalVerAtencion">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
         <div class="modal-content">
         
             <!-- Modal Header -->
@@ -99,6 +99,80 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <div class="container">
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="fechaAtecnion">Fecha</label>
+                                <input type="datetime" class="form-control" id="fechaAtecnion" aria-describedby="helpId" readonly>
+                                <small id="helpId" class="form-text text-muted">Fecha Atendida </small>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <form id="form-update-atencion">
+                                <input type="hidden" id="idUpdate">
+                            <div class="form-group">
+                                <label for="fechaAviso">Fecha</label>
+                                <input type="date" class="form-control" id="fechaAviso" aria-describedby="helpId">
+                                <small id="helpId" class="form-text text-muted">Fecha por Avisar </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="selectType">Tipo de Cliente</label>
+                                <select class="custom-select" id="selectType">
+                                    <option selected value="null">Seleccione ...</option>
+                                    <option value="Potencial">Potencial</option>
+                                    <option value="Frecuente">Frecuente</option>
+                                    <option value="Ocasional">Ocasional</option>
+                                    <option value="Tercerizadores">Tercerizadores</option>
+                                    <option value="Prospecto">Prospecto</option>
+                                    <option value="No Potencial">No potencial</option>
+                                    <option value="Mal Cliente">Mal Cliente</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="selectOrigin">Origen</label>
+                                <select class="custom-select" id="selectOrigin">
+                                    <option selected value="null">Seleccione ...</option>
+                                    <option value="Mailing">Mailing</option>
+                                    <option value="Pagina Web">Pagina Web</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="Chat">Chat</option>
+                                    <option value="Llamadas">Llamadas</option>
+                                    <option value="Referidos">Referidos</option>
+                                    <option value="Otros">Otros</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="selectStatus">Estatus Atención </label>
+                                <select class="custom-select" id="selectStatus">
+                                    <option selected value="null">Seleccione ...</option>
+                                    <option value="Contacto Inicial">Contacto Inicial</option>
+                                    <option value="Retomar Contacto">Retomar Contacto</option>
+                                    <option value="Pendiente por Cotizar">Pendiente por Cotizar</option>
+                                    <option value="Cotizado">Cotizado</option>
+                                    <option value="Venta Realizada">Venta Realizada</option>
+                                    <option value="Venta No Realizada">Venta No Realizada</option>
+                                    <option value="Prod. Entrgado">Prod. Entrgado</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <button type="submit" class="btn btn-warning rounded-pill">Editar</button>
+                        </div>
+                    </div>
+                </form>
+                    <hr>
                     <div class="row mb-2">
                         <div class="col">
                             <h5>Cliente <span id="clienteView" class="badge badge-secondary"></span></h5>
@@ -195,12 +269,65 @@
             
             <!-- Modal footer -->
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
             </div>
         </div>
         </div>
     </div>
     <!-- Fin Modal Ver Datos-->
+
+    <!-- Modal Ver Historial-->
+  <div class="modal fade" id="myModalHistorial">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h1 class="modal-title">Historial</h1>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="container">
+                <div class="row mb-2">
+                </div>
+                <div class="row mb-2">
+                    <div class="col">
+                        <form id="from-historial">
+                        <input type="hidden" id="idDato">
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" rows="5" cols="100"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning rounded-pill">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+                <div class="row mb-2">
+                    <div class="col">
+                        <h5>Historias</h5>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col rounded-pill bg-secondary">
+                        <div id="viewHistoria">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    <!-- Fin Modal Ver Historial-->
     <!-- Fin Modal -->
 </body>
 </body>

@@ -58,3 +58,7 @@ body {
         width: calc(100% - 17rem);
     }
 }
+.contenedorHistoria{
+    width: 100%;
+    margin-bottom: 20px;
+}

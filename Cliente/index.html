@@ -101,7 +101,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col" colspan="4" class="text-center">Acciones</th>
+                                <th scope="col-auto" colspan="4" class="text-center">Acciones</th>
                                 <th scope="col">ID</th>
                                 <th scope="col">Cliente</th>
                                 <th scope="col">Empresa</th>
@@ -117,7 +117,7 @@
         <!-- Inicio Modal's -->
         <!-- Modal Atender-->
         <div class="modal fade" id="myModalAtender">
-            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-dialog modal-dialog-scrollable modal-lg">
               <div class="modal-content">
               
                 <!-- Modal Header -->
@@ -437,7 +437,7 @@
           <!-- Fin Modal Register Cliente -->
             <!-- Modal Ver Datos -->
             <div class="modal fade" id="myModalVer">
-                <div class="modal-dialog modal-xl">
+                <div class="modal-dialog modal-dialog-scrollable modal-xl">
                 <div class="modal-content">
                 
                     <!-- Modal Header -->
@@ -601,8 +601,52 @@
                                     <input type="text" class="form-control" id="posicionEdit">
                                 </div>
                                 <div class="col">
-                                    <label for="provincia" class="form-label">Distrito</label>
-                                    <input type="text" class="form-control" id="distritoEdit">
+                                    <div class="form-group">
+                                        <label for="distrito">Distrito</label>
+                                        <select class="custom-select" id="distritoEdit">
+                                            <option selected>Seleccione ...</option>
+                                            <option value="Ancón">Ancón</option>
+                                            <option value="Ate Vitarte">Ate Vitarte</option>
+                                            <option value="Barranco">Barranco</option>
+                                            <option value="Breña">Breña</option>
+                                            <option value="Carabayllo">Carabayllo</option>
+                                            <option value="Chorrillos">Chorrillos</option>
+                                            <option value="Cieneguilla">Cieneguilla</option>
+                                            <option value="Comas">Comas</option>
+                                            <option value="El Agustino">El Agustino</option>
+                                            <option value="Independencia">Independencia</option>
+                                            <option value="Jesús María">Jesús María</option>
+                                            <option value="La Molina">La Molina</option>
+                                            <option value="Lima">Lima</option>
+                                            <option value="Los Olivos">Los Olivos</option>
+                                            <option value="Lurigancho">Lurigancho</option>
+                                            <option value="Lurín">Lurín</option>
+                                            <option value="Magdalena del Mar">Magdalena del Mar</option>
+                                            <option value="Miraflores">Miraflores</option>
+                                            <option value="Pachacamac">Pachacamac</option>
+                                            <option value="Pucusana">Pucusana</option>
+                                            <option value="Pueblo Libre">Pueblo Libre</option>
+                                            <option value="Puente Piedra">Puente Piedra</option>
+                                            <option value="Punta Hermosa">Punta Hermosa</option>
+                                            <option value="Punta Negra">Punta Negra</option>
+                                            <option value="Rimac">Rimac</option>
+                                            <option value="San Bartolo">San Bartolo</option>
+                                            <option value="San Borja">San Borja</option>
+                                            <option value="San Isidro">San Isidro</option>
+                                            <option value="San Juan de Lurigancho">San Juan de Lurigancho</option>
+                                            <option value="San Juan de Miraflores">San Juan de Miraflores</option>
+                                            <option value="San Luis">San Luis</option>
+                                            <option value="San Martín de Porres">San Martín de Porres</option>
+                                            <option value="San Miguel">San Miguel</option>
+                                            <option value="Santa Anita">Santa Anita</option>
+                                            <option value="Santa María del Mar">Santa María del Mar</option>
+                                            <option value="Santa Rosa">Santa Rosa</option>
+                                            <option value="Santiago de Surco">Santiago de Surco</option>
+                                            <option value="Surquillo">Surquillo</option>
+                                            <option value="Villa El Salvador">Villa El Salvador</option>
+                                            <option value="Vila María del Triunfo">Vila María del Triunfo</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col">
                                     <label for="provincia" class="form-label">Provincia</label>
@@ -612,9 +656,12 @@
                             <hr>
                             <div class="row mb-2">
                                 <div class="col">
-                                    <label for="RazonSocial">Empresa</label>
-                                    <input type="text" class="form-control" id="razonSocialEdit">
                                     <input type="hidden" id="empresaIdEdit">
+                                    <div class="form-group">
+                                        <label for="business">Empresa</label>
+                                        <select class="custom-select" id="datoEmpresaAll">
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -10,9 +10,10 @@
         $posicion = $_POST['posicion'];
         $distrito = $_POST['distrito'];
         $provincia = $_POST['provincia'];
+        $empresa = $_POST['empresa'];
 
         $query = "UPDATE customers SET name='$name',position='$posicion',address='$direccion',district='$distrito',
-        province='$provincia',email='$email',phone='$telefono',movil='$celular' WHERE id = '$id' ";
+        province='$provincia',email='$email',phone='$telefono',movil='$celular', business='$empresa' WHERE id = '$id' ";
         $result = $conexion->query($query);
         if ($result){
             echo "Edit Success";
