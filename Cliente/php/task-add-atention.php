@@ -2,9 +2,9 @@
 
     function getBusiness($dato){
         include "../../Conexion/conexion.php";
-        $query = "SELECT business FROM customers WHERE id = '$dato'";
+        $query = "SELECT id_business FROM customers WHERE id = '$dato'";
         $result = $conexion->query($query)->fetch_array();
-        return $result['business'];
+        return $result['id_business'];
     }
     include '../../Conexion/conexion.php';
     session_start();
@@ -17,7 +17,7 @@
 
         $business = getBusiness($id);
 
-        $query = "INSERT INTO details_attention(people,business,customers,type_customers,origin,`status`)
+        $query = "INSERT INTO details_attention(id_people,id_business,id_customer,`type`,origin,`status`)
         VALUES ('$idUsuario','$business','$id','$type','$origin','$status')";
 
         $result = $conexion->query($query);

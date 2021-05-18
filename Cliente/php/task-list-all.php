@@ -4,7 +4,7 @@ function getNull($dato){
     if($dato == null){
         return "Sin Dato";
     }else {
-        $query = "SELECT name FROM business WHERE id = '$dato'";
+        $query = "SELECT `name` FROM business WHERE id = '$dato'";
         $result = $conexion->query($query)->fetch_array();
         return $result['name'];
     }
@@ -18,7 +18,7 @@ include "../../Conexion/conexion.php";
         $json[] = array(
             'id' => $row['id'],
             'cliente' => $row['name'],
-            'empresa' => getNull($row['business'])
+            'empresa' => getNull($row['id_business'])
         );
     }
     $jsonstring = json_encode($json);

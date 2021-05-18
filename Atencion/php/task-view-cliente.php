@@ -3,7 +3,7 @@
         include '../../Conexion/conexion.php';
         $query = "SELECT * FROM details_attention WHERE id = '$dato'";
         $result = $conexion->query($query)->fetch_array();
-        return $result['customers'];
+        return $result['id_customer'];
     }
 
     include '../../Conexion/conexion.php';
@@ -22,7 +22,6 @@
                 'province' => $row['province'],
                 'email' => $row['email'],
                 'phone' => $row['phone'],
-                'movil' => $row['movil'],
             );
         }
         echo json_encode($json[0]);

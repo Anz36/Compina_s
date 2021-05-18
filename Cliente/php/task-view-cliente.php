@@ -13,7 +13,6 @@
             'province' => $row['province'],
             'email' => $row['email'],
             'phone' => $row['phone'],
-            'movil' => $row['movil'],
             'id' => $row['id']
         );
     }

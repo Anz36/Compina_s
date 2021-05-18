@@ -20,7 +20,7 @@
     while ($row = $result->fetch_array()){
         $json[] = array(
             'nombre' => $row['name'],
-            'empresas' => getBusiness($row['business']),
+            'empresas' => getBusiness($row['id_business']),
             'id' => $row['id']
         );
     }

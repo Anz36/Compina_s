@@ -20,14 +20,14 @@
 
     $search = $_POST['search'];
     if(!empty($search)){
-        $query = "SELECT * from customers where name like '$search%' or email like '$search%' or phone like '$search%' or district like '$search%' or position like '$search%' ORDER BY id DESC";
+        $query = "SELECT * from customers where `name` like '$search%' or email like '$search%' or phone like '$search%' or district like '$search%' or position like '$search%' ORDER BY id DESC";
         $result = $conexion->query($query);
         $json = array();
         while($row = $result->fetch_array()){
             $json[] = array(
             'id' => $row['id'],
             'cliente' => $row['name'],
-            'business' => getNull($row['business'])
+            'business' => getNull($row['id_business'])
             );
         }
         $jsonString = json_encode($json);
@@ -40,7 +40,7 @@
                 $json[] = array(
                     'id' => $row['id'],
                     'cliente' => $row['name'],
-                    'business' => getNull($row['business'])
+                    'business' => getNull($row['id_business'])
                     );
             }
             $jsonString = json_encode($json);

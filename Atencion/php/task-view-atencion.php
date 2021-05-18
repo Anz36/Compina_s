@@ -8,8 +8,8 @@
         $json = array();
         while($row = $result->fetch_array()){
             $json[] = array(
-                'fecha' => $row['date_attention'],
-                'tipo' => $row['type_customers'],
+                'fecha' => $row['created_at'],
+                'tipo' => $row['type'],
                 'origen' => $row['origin'],
                 'status' => $row['status'],
                 'fecha_aviso' => $row['date_notice']

@@ -36,12 +36,12 @@
     $json = array();
     while ($row = $result->fetch_array()){
         $json[] = array(
-            'personal' => getPersonal($row['people']),
-            'empresas' => getEmpresa($row['business']),
-            'cliente' => getCliente($row['customers']),
-            'fecha' => $row['date_attention'],
+            'personal' => getPersonal($row['id_people']),
+            'empresas' => getEmpresa($row['id_business']),
+            'cliente' => getCliente($row['id_customer']),
+            'fecha' => $row['created_at'],
             'fecha_aviso' => getFecha($row['date_notice']),
-            'tipo' => $row['type_customers'],
+            'tipo' => $row['type'],
             'Origen' => $row['origin'],
             'estado' => $row['status'],
             'id' => $row['id']

@@ -10,7 +10,7 @@
         $website = $_POST['website'];
         $anivresarios = $_POST['aniversarios'];
         
-        $query = "INSERT INTO business(name, ruc, rubro, address, address_reference, anniversary, page_web) 
+        $query = "INSERT INTO business(`name`, ruc, rubro, `address`, reference, anniversary, `page`) 
         VALUES ('$name', '$ruc', '$rubro', '$direccion', '$refenrecia', '$anivresarios', '$website')";
 
         $result = $conexion->query($query);

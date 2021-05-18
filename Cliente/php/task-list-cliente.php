@@ -5,7 +5,7 @@
         if($dato == null){
             return "Sin Dato";
         }else {
-            $query = "SELECT name FROM business WHERE id = '$dato'";
+            $query = "SELECT `name` FROM business WHERE id = '$dato'";
             $result = $conexion->query($query)->fetch_array();
             return $result['name'];
         }
@@ -21,7 +21,7 @@
             $json[] = array(
                 'id' => $row['id'],
                 'cliente' => $row['name'],
-                'empresa' => getNull($row['business']),
+                'empresa' => getNull($row['id_business']),
                 'limit' => $limit
             );
         }
@@ -36,7 +36,7 @@
                 $json[] = array(
                     'id' => $row['id'],
                     'cliente' => $row['name'],
-                    'empresa' => getNull($row['business']),
+                    'empresa' => getNull($row['id_business']),
                     'limit' => $limit
                 );
             }
@@ -51,7 +51,7 @@
                     $json[] = array(
                         'id' => $row['id'],
                         'cliente' => $row['name'],
-                        'empresa' => getNull($row['business']),
+                        'empresa' => getNull($row['id_business']),
                         'limit' => $limit
                     );
                 }
@@ -66,7 +66,7 @@
                         $json[] = array(
                             'id' => $row['id'],
                             'cliente' => $row['name'],
-                            'empresa' => getNull($row['business']),
+                            'empresa' => getNull($row['id_business']),
                             'limit' => $limit
                         );
                     }
@@ -80,7 +80,7 @@
                         $json[] = array(
                             'id' => $row['id'],
                             'cliente' => $row['name'],
-                            'empresa' => getNull($row['business']),
+                            'empresa' => getNull($row['id_business']),
                             'limit' => $limit
                         );
                     }

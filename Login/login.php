@@ -8,7 +8,7 @@
     $result = mysqli_query($conexion,$sql);
 
     while($datos = mysqli_fetch_array($result)){
-        $_SESSION['usuario'] = $datos['people'];
+        $_SESSION['usuario'] = $datos['id_people'];
         $_SESSION['type'] = $datos['type_user'];
     }
     

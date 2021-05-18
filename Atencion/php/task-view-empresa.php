@@ -3,7 +3,7 @@
         include '../../Conexion/conexion.php';
         $query = "SELECT * FROM details_attention WHERE id = '$dato'";
         $result = $conexion->query($query)->fetch_array();
-        return $result['business'];
+        return $result['id_business'];
     }
 
     include '../../Conexion/conexion.php';
@@ -19,9 +19,9 @@
                 'ruc' => $row['ruc'],
                 'rubro' => $row['rubro'],
                 'direccionEmpresa' => $row['address'],
-                'direccionEmpresaReference' => $row['address_reference'],
+                'direccionEmpresaReference' => $row['reference'],
                 'aniversario' => $row['anniversary'],
-                'page_web' => $row['page_web']
+                'page_web' => $row['page']
             );
         }
         echo json_encode($json[0]);
