@@ -11,7 +11,6 @@ $('#register-form-empresa').submit(function(e){
         aniversarios: $('#dateRegister').val()
     };
     $.post('../Cliente/php/task-add-empresa.php', postData, function(response){
-        console.log(response);
         fetchCliente();
         $('#register-form-empresa').trigger('reset');
     });

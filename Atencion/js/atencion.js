@@ -88,7 +88,7 @@ function fetchListAtencion(){
                                 <tr taskId="${tasks.id}">
                                     <td><a  class = "btn btn-warning btnVerAtencion rounded-pill" data-toggle="modal" data-target="#myModalVerAtencion"> Ver/Editar  </a> </td>
                                     <td><a  class = "btn btn-info btnHistorial rounded-pill" data-toggle="modal" data-target="#myModalHistorial"> Historial/Editar  </a> </td>
-                                    <td><a  class = "btn btn-success btnEliminar rounded-pill"> Completar  </a> </td>
+                                    <td><a  class = "btn btn-success btnCompletar rounded-pill"> Completar  </a> </td>
                                     <td>${tasks.personal}</td>
                                     <td>${tasks.empresas}</td>
                                     <td>${tasks.cliente}</td>

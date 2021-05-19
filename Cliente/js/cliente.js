@@ -167,6 +167,31 @@ $('#form-atencion').submit(function(e){
     });
 });
 
+$(document).on('click','.btnPerfil',function(){
+    $.post('../Cliente/php/task-view-user.php',function(response){
+        const task = JSON.parse(response);
+        $('#nombrePerfil').val(task.nombre);
+        $('#apellidoPerfil').val(task.apellidos);
+        $('#cumpleañosPerfil').val(task.cumpleaños);
+        $('#telefonoPerfil').val(task.telefono);
+        $('#emailPerfil').val(task.email);
+    })
+});
+
+$('#form-editPerfil').submit(function(e){
+    const postData = {
+        nombre: $('#nombrePerfil').val(),
+        apellidos: $('#apellidoPerfil').val(),
+        cumpleaños: $('#cumpleañosPerfil').val(),
+        telefono: $('#telefonoPerfil').val(),
+        email: $('#emailPerfil').val()
+    }
+    $.post('../Cliente/php/task-update-user.php',postData, function(response){
+        
+    });
+    e.preventDefault();
+});
+
 function fetchCliente(){
     
     $('#mostrarDatos').change(function(){
