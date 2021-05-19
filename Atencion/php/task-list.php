@@ -31,7 +31,7 @@
     }
 
     include '../../Conexion/conexion.php';
-    $query = "SELECT * FROM details_attention ORDER BY id DESC";
+    $query = "SELECT * FROM details_attention WHERE active!= 0 ORDER BY id DESC";
     $result = $conexion->query($query);
     $json = array();
     while ($row = $result->fetch_array()){

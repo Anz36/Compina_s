@@ -187,9 +187,8 @@ $('#form-editPerfil').submit(function(e){
         email: $('#emailPerfil').val()
     }
     $.post('../Cliente/php/task-update-user.php',postData, function(response){
-        
+        alert('Su Perfil a sido editado');
     });
-    e.preventDefault();
 });
 
 function fetchCliente(){

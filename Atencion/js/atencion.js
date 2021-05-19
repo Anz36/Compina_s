@@ -73,7 +73,16 @@ $('#from-historial').submit(function(e) {
         }
     });
     e.preventDefault();
-    
+});
+
+$(document).on('click','.btnCompletar',function() {
+    if(confirm('¿Esta seguro?')){
+        let element = $(this)[0].parentElement.parentElement;
+        let id = $(element).attr('taskId');
+        $.post('../Atencion/php/task-atencion-compled.php',{id},function(response){
+            fetchListAtencion();
+        });
+    }
 });
 
 function fetchListAtencion(){

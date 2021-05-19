@@ -18,6 +18,7 @@
             <div class="media-body">
                 <h4 class="m-0" id="userName"></h4>
                 <p class="font-weight-normal text-mutd mb-0" id="userType"></p>
+                <a  class = "btn-link btnPerfil rounded-pill" data-toggle="modal" data-target="#myModalPerfil"> Editar Perfil  </a>
             </div>
         </div>
         <hr>
@@ -328,6 +329,76 @@
     </div>
   </div>
     <!-- Fin Modal Ver Historial-->
+    <!-- Modal Perfil Datos -->
+    <div class="modal fade" id="myModalPerfil">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Editar Perfil</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row mb-2">
+                        <div class="col">
+                            <form id="form-editPerfil">
+                            <div class="form-group">
+                                <label for="nombrePerfil">Nombre</label>
+                                <input type="text" class="form-control" id="nombrePerfil" aria-describedby="helpId">
+                                <small id="helpId" class="form-text text-muted">Primer nombre</small>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="apellidoPerfil">Apellido</label>
+                                <input type="text" class="form-control" id="apellidoPerfil" aria-describedby="helpId">
+                                <small id="helpId" class="form-text text-muted">Primer apellido</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="form-group">
+                              <label for="cumpleañosPerfil">Cumpleaños</label>
+                              <input type="date" class="form-control" id="cumpleañosPerfil" aria-describedby="helpId">
+                              <small id="helpId" class="form-text text-muted">¿Cúando Nacio?</small>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                              <label for="telefonoPerfil">Telefono</label>
+                              <input type="text" class="form-control" id="telefonoPerfil" aria-describedby="helpId">
+                              <small id="helpId" class="form-text text-muted">Numero de telefono</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="emailPerfil">Email</label>
+                                <input type="email" class="form-control" id="emailPerfil" aria-describedby="helpId">
+                                <small id="helpId" class="form-text text-muted">Correo más usado</small>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success rounded-pill">Editar</button>
+            </form>
+                <button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Salir</button>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+    <!-- Fin Modal Perfil Datos-->
     <!-- Fin Modal -->
 </body>
 </body>
