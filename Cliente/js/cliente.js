@@ -18,11 +18,13 @@ $('#searchCliente').keyup(function(){
                 task.forEach(tasks =>{
                     template +=`
                         <tr taskId="${tasks.id}">
-                            <td><a  class = "btn btn-primary btnAtender rounded-pill" data-toggle="modal" data-target="#myModalAtender"> Atender  </a> </td>
-                            <td><a  class = "btn btn-warning btnVer rounded-pill" data-toggle="modal" data-target="#myModalVer"> Ver  </a> </td>
-                            <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
-                            <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
-                            <td>${tasks.id}</td>
+                        <td>
+                        <a  class = "btn btn-ligth btnAtender btn-md rounded-pill" data-toggle="modal" data-target="#myModalAtender"> <i class="fas fa-headset fa-2x text-primary" title = "Atender"></i> </a>
+                        <a  class = "btn btn-ligth btnVer btn-md rounded-pill" data-toggle="modal" data-target="#myModalVer"> <i class="fas fa-search-plus fa-2x text-primary" title="Visualizar Datos"></i>  </a> 
+                        <a  class = "btn btn-ligth btnEditar btn-md rounded-pill" data-toggle="modal" data-target="#myModalEditar"> <i class="far fa-edit fa-2x text-primary" title="Editar"></i>  </a>
+                        <a  class = "btn btn-ligth btn-md btnEliminar rounded-pill"> <i class="fas fa-trash fa-2x text-primary" title="Eliminar"></i>  </a>
+                        </td>
+                            <td class="align-center">${tasks.id}</td>
                             <td>${tasks.cliente}</td>
                             <td>${tasks.business}</td>
                         </tr>
@@ -207,10 +209,12 @@ function fetchCliente(){
                     task.forEach(tasks =>{
                         template +=`
                             <tr taskId="${tasks.id}">
-                                <td><a  class = "btn btn-primary btnAtender rounded-pill" data-toggle="modal" data-target="#myModalAtender"> Atender  </a> </td>
-                                <td><a  class = "btn btn-warning btnVer rounded-pill" data-toggle="modal" data-target="#myModalVer"> Ver  </a> </td>
-                                <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
-                                <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
+                            <td>
+                            <a  class = "btn btn-ligth btnAtender btn-md rounded-pill" data-toggle="modal" data-target="#myModalAtender"> <i class="fas fa-headset fa-2x text-primary" title = "Atender"></i> </a>
+                            <a  class = "btn btn-ligth btnVer btn-md rounded-pill" data-toggle="modal" data-target="#myModalVer"> <i class="fas fa-search-plus fa-2x text-primary" title="Visualizar Datos"></i>  </a> 
+                            <a  class = "btn btn-ligth btnEditar btn-md rounded-pill" data-toggle="modal" data-target="#myModalEditar"> <i class="far fa-edit fa-2x text-primary" title="Editar"></i>  </a>
+                            <a  class = "btn btn-ligth btn-md btnEliminar rounded-pill"> <i class="fas fa-trash fa-2x text-primary" title="Eliminar"></i>  </a>
+                            </td>
                                 <td>${tasks.id}</td>
                                 <td>${tasks.cliente}</td>
                                 <td>${tasks.empresa}</td>
@@ -235,13 +239,21 @@ function fetchList(){
             task.forEach(tasks =>{
                     template +=`
                         <tr taskId="${tasks.id}">
-                            <td><a  class = "btn btn-primary btnAtender rounded-pill" data-toggle="modal" data-target="#myModalAtender"> Atender  </a> </td>
-                            <td><a  class = "btn btn-warning btnVer rounded-pill" data-toggle="modal" data-target="#myModalVer"> Ver  </a> </td>
-                            <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
-                            <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
+                        <td>
+                            <a  class = "btn btn-ligth btnAtender btn-md rounded-pill" data-toggle="modal" data-target="#myModalAtender"> <i class="fas fa-headset fa-2x text-primary" title = "Atender"></i> </a>
+                            <a  class = "btn btn-ligth btnVer btn-md rounded-pill" data-toggle="modal" data-target="#myModalVer"> <i class="fas fa-search-plus fa-2x text-primary" title="Visualizar Datos"></i>  </a> 
+                            <a  class = "btn btn-ligth btnEditar btn-md rounded-pill" data-toggle="modal" data-target="#myModalEditar"> <i class="far fa-edit fa-2x text-primary" title="Editar"></i>  </a>
+                            <a  class = "btn btn-ligth btn-md btnEliminar rounded-pill"> <i class="fas fa-trash fa-2x text-primary" title="Eliminar"></i>  </a>
+                            </td>
                             <td>${tasks.id}</td>
                             <td>${tasks.cliente}</td>
                             <td>${tasks.empresa}</td>
+                            <td>${tasks.posicion}</td>
+                            <td>${tasks.direccion}</td>
+                            <td>${tasks.distrito}</td>
+                            <td>${tasks.provincia}</td>
+                            <td>${tasks.email}</td>
+                            <td>${tasks.telefono}</td>
                         </tr>
                     `
                 });

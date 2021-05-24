@@ -58,3 +58,9 @@ body {
         width: calc(100% - 17rem);
     }
 }
+.table td, .table th{
+    vertical-align: middle !important;
+}
+.fas{
+    transition: 0.1s;
+}

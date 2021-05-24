@@ -4,7 +4,7 @@
     if(isset($_POST['id'])){
 
         $id = $_POST['id'];
-        $query = "DELETE FROM customers WHERE id = '$id'";
+        $query = "UPDATE customers SET active = 0 WHERE id = '$id'";
 
         $result = $conexion->query($query);
         if($result){

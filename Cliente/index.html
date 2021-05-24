@@ -29,19 +29,19 @@
         <ul class="nav flex-column bg-white mb-0">
             <li class="nav-item">
                 <a href="../Cliente/" class="nav-link text-dark bg-light">
-                    <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                    <i class="fas fa-users mr-3 text-primary"></i>
                     Clientes
                 </a>
             </li>
             <li class="nav-item">
                 <a href="../Requerimientos/" class="nav-link text-dark">
-                    <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                    <i class="fas fa-tasks mr-3 text-primary"></i>
                     Requerimientos
                 </a>
             </li>
             <li class="nav-item">
                 <a href="../Atencion/" class="nav-link text-dark">
-                    <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                    <i class="fas fa-headset mr-3 text-primary"></i>
                     Atención
                 </a>
             </li>
@@ -62,18 +62,20 @@
             <hr>
             <div class="row">
                 <div class="col-auto">
-                    <button type="button" class="btn btn-warning rounded-pill shadow" data-toggle="modal" data-target="#myModalRegisterEmpresa">
+                    <button type="button" class="btn btn-warning btn-sm rounded-pill shadow" data-toggle="modal" data-target="#myModalRegisterEmpresa">
+                        <i class="far fa-building mr-3 text-light" title="Agregar Empresa"></i>
                         Agregar Empresa
                     </button>
                 </div>
                 <div class="col-auto">
-                    <button type="button" class="btn btn-warning rounded-pill shadow" data-toggle="modal" data-target="#myModalRegisterCliente">
+                    <button type="button" class="btn btn-warning btn-sm rounded-pill shadow" data-toggle="modal" data-target="#myModalRegisterCliente">
+                        <i class="fas fa-user-plus mr-3 text-light" title="Agregar Cliente"></i>
                         Agregar Cliente
                     </button>
                 </div>
             </div>
             <hr>
-            <div class="row text-dar">
+            <div class="row text-dark">
                 <div class="col">
                     <div class="form-group">
                         <label for="">Busqueda</label>
@@ -99,13 +101,19 @@
         <!-- <div class="separator"></div> -->
             <div class="row text-dark">
                 <div class="col-auto table-responsive">
-                    <table class="table table-hover">
+                    <table class="table table-hover table-md">
                         <thead>
                             <tr>
-                                <th scope="col-auto" colspan="4" class="text-center">Acciones</th>
+                                <th scope="col" class="text-center">Acciones</th>
                                 <th scope="col">ID</th>
                                 <th scope="col">Cliente</th>
                                 <th scope="col">Empresa</th>
+                                <th scope="col">Posicion</th>
+                                <th scope="col">Dirección</th>
+                                <th scope="col">Distrito</th>
+                                <th scope="col">Provincia</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
                             </tr>
                         </thead>
                         <tbody id="cotenidoCliente">
@@ -747,6 +755,7 @@
         <!-- Fin Alert (Toast)-->
         
 </body>
+<script src="https://kit.fontawesome.com/45bbe53cd7.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
