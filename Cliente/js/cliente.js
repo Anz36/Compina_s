@@ -241,9 +241,10 @@ function fetchList(){
                         <tr taskId="${tasks.id}">
                         <td>
                             <a  class = "btn btn-ligth btnAtender btn-md rounded-pill" data-toggle="modal" data-target="#myModalAtender"> <i class="fas fa-headset fa-2x text-primary" title = "Atender"></i> </a>
-                            <a  class = "btn btn-ligth btnVer btn-md rounded-pill" data-toggle="modal" data-target="#myModalVer"> <i class="fas fa-search-plus fa-2x text-primary" title="Visualizar Datos"></i>  </a> 
+                            <a  class = "btn btn-ligth btnVer btn-md rounded-pill" data-toggle="modal" data-target="#myModalVer"> <i class="fas fa-search-plus fa-2x text-primary" title="Visualizar Datos"></i>  </a>                     
                             <a  class = "btn btn-ligth btnEditar btn-md rounded-pill" data-toggle="modal" data-target="#myModalEditar"> <i class="far fa-edit fa-2x text-primary" title="Editar"></i>  </a>
-                            <a  class = "btn btn-ligth btn-md btnEliminar rounded-pill"> <i class="fas fa-trash fa-2x text-primary" title="Eliminar"></i>  </a>
+                            <a  class = "btn btn-ligth btn-md btnEliminar rounded-pill"> <i class="fas fa-trash fa-2x text-primary" title="Eliminar"></i>  </a>    
+                        
                             </td>
                             <td>${tasks.id}</td>
                             <td>${tasks.cliente}</td>
