@@ -28,6 +28,21 @@ CREATE TABLE customers(
     FOREIGN KEY (id_business) REFERENCES business(id)
 );
 
+CREATE TABLE customers_perfil(
+    id BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    id_customer BIGINT UNSIGNED NOT NULL,
+    `type` TEXT NOT NULL DEFAULT 'Por definir',
+    politic_payment TEXT NOT NULL DEFAULT 'Por definir',
+    supplier_job TINYINT(1) NOT NULL DEFAULT 1,
+    facture TEXT NOT NULL DEFAULT 'Por definir',
+    frequency_payment TEXT NOT NULL DEFAULT 'Por definir',
+    special_text TEXT NOT NULL DEFAULT 'No cuenta con adicionales',
+    active TINYINT(1) NOT NULL DEFAULT 1,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_customer) REFERENCES customers(id)
+);
+
 CREATE TABLE people(
     id BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(150) NOT NULL DEFAULT 'Por definir',

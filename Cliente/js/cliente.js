@@ -46,16 +46,21 @@ $('#register-form-cliente').submit(function(e) {
         name: $('#nameRegister').val(),
         email: $('#emailRegister').val(),
         telefono: $('#telefonoRegister').val(),
-        celular: $('#celularRegister').val(),
         direccion: $('#direccionRegister').val(),
         posicion: $('#posicionRegister').val(),
         distrito: $('#distritoRegister').val(),
         provincia: $('#provinciaRegister').val(),
-        empresa: $('#datoEmpresaRegister').val()
+        empresa: $('#datoEmpresaRegister').val(),
+        type: $('#textTipoCliente').val(),
+        politic: $('#textPoliticaCliente').val(),
+        factures: $('#textFacturacionCliente').val(),
+        play: $('#textPagosCliente').val(),
+        adicion : $('#textDatosAdicionales').val(),
+        check: $('#checkJob').is(':checked')
     };
     $.post('../Cliente/php/task-add-cliente.php', postData, function(response){
         fetchList();
-        $('#register-form-cliente').trigger('reset');
+        $('#register-form-cliente').trigger('reset');   
     });
     e.preventDefault();
 });
