@@ -88,6 +88,7 @@ $(document).on('click','.btnEliminar', function(){
 $(document).on('click','.btnVer', function(){
     let element = $(this)[0].parentElement.parentElement;
     let id = $(element).attr('taskId');
+    console.log(id);
     $.post('../Cliente/php/task-view-cliente.php', {id}, function(response){
         const task = JSON.parse(response);
         $('#clienteView').html(task.name);
@@ -108,6 +109,15 @@ $(document).on('click','.btnVer', function(){
         $('#direccionEmpresaView').val(task_business.direccionEmpresa);
         $('#referenciaView').val(task_business.direccionEmpresaReference);
         $('#dateView').val(task_business.aniversario);
+    });
+    $.post('../Cliente/php/task-view-cliente-perfil.php',{id},function(response){
+        const task_customer = JSON.parse(response);
+        $('#dataTipoCliente').val(task_customer.type);
+        $('#dataPoliticaCliente').val(task_customer.politic);
+        $('#datacheckJob').val(task_customer.jobs);
+        $('#dataFacturacionCliente').val(task_customer.facture);
+        $('#dataPagosCliente').val(task_customer.frequency);
+        $('#datosAdicionales').val(task_customer.special);
     });
 });
 

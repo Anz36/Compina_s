@@ -60,6 +60,9 @@ body {
 }
 .table td, .table th{
     vertical-align: middle !important;
+    padding-bottom: 10px !important;
+    padding-left: 10px !important;
+    padding-right: 15px !important;
 }
 .fas{
     transition: 0.1s;
